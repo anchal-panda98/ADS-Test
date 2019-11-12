@@ -14,15 +14,6 @@ struct  _heap_
 	Queue *link;
 };
 
-struct _queue_
-{
-	uint32_t size;
-	int32_t data[HEAP_MAX_SIZE]
-	int32_t timeStamp;
-	int32_t aircraft_no;
-	char status;
-};
-
 Queue 		queue_new(uint32_t size);
 Queue* 		queue_add(Queue *q, int32_t timeStamp, int32_t aircraft_no, char status);
 Heap 		heap_new(int32_t data[], uint32_t len);
