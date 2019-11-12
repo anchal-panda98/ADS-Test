@@ -91,25 +91,6 @@ Heap*	heap_insert(Heap *heap, int32_t key)
 
 }
 
-Queue queue_new(uint32_t size)
-{
-	Queue q = {heap.size, 0, 0, 0, 0, 0};
-	return q;
-}
-
-Queue* queue_add(Queue *q, int32_t timeStamp, int32_t aircraft_no, char status)
-{
-	assert(q != NULL);
-	q->data[q->timeStamp] = timeStamp;
-	q->data[q->aircraft_no] = aircraft_no;
-	q->data[q->status] = status;
-	q->timeStamp = (q->timeStamp +1) % q->size;
-	q->aircraft_no = (q->aircraft_no +1) % q->size;
-	q->status = (q->status +1) % q->size;
-	heap->data->link = q;
-	return q;
-}
-
 int32_t		heap_get_max(Heap *heap)
 {
 	assert (heap->size > 0 && heap->size < HEAP_MAX_SIZE);
